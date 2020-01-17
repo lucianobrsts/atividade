@@ -1,4 +1,4 @@
-package br.com.atividade.paginaprincipal;
+package br.com.atividade.bean;
 
 import java.io.Serializable;
 

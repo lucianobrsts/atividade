@@ -9,7 +9,7 @@
 	xmlns:t="http://myfaces.apache.org/tomahawk"
 	xmlns:rich="http://richfaces.org/rich">
 
-<ui:composition template="template.xhtml">
+<ui:composition template="/templates/template.xhtml">
 
 	<ui:define name="headHtml">
 		<!-- paginaPrincipal.xhtml -->
@@ -26,7 +26,7 @@
 
 			<rich:panel header="Teste SESA" style="width: auto">
 
-				<h2>Coloque seu nome completo aqui</h2>
+				<h2>Luciano Brito dos Santos</h2>
 
 				<ul>
 					<li>Criar um CRUD conforme diagrama de classes abaixo.</li>
@@ -48,10 +48,11 @@
 				<br />
 				<br />
 
-				<t:graphicImage url="img/diagrama-prova-SESA.PNG" />
+				<t:graphicImage value="/resources/image/diagrama-prova-SESA.PNG"
+					width="600px" border="1" />
 
 				<p>- Links úteis:</p>
-				
+
 				<ul>
 					<li><a
 						href="https://docs.jboss.org/richfaces/latest_3_3_X/en/devguide/html/">Manual
@@ -65,13 +66,14 @@
 						href="http://showcase.richfaces.org/richfaces/component-sample.jsf">Show
 							case</a></li>
 				</ul>
-				
+
 				<p>(obs: a versão do show case é mais atual que a versão do
 					projeto, portanto algumas coisas podem não funcionar da mesma
 					maneira).</p>
-				
+
 				<div style="width: 100%; text-align: right;">
-					<a4j:commandButton value="Chamar seu CRUD" />
+					<h:commandButton value="Chamar seu CRUD"
+						action="#{paginaPrincipalBean.paginaMenu()}" ajaxSingle="false" />
 				</div>
 			</rich:panel>
 		</h:form>

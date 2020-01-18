@@ -7,7 +7,7 @@
 
 	<managed-bean>
 		<managed-bean-name>paginaPrincipalBean</managed-bean-name>
-		<managed-bean-class>br.com.atividade.paginaprincipal.PaginaPrincipalBean</managed-bean-class>
+		<managed-bean-class>br.com.atividade.bean.PaginaPrincipalBean</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 

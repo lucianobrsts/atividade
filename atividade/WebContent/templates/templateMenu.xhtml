@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+					  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+<head>
+<ui:insert name="headHtml">
+
+</ui:insert>
+
+<!-- template.xhtml -->
+
+<!-- Prova elaborada por Daniel Oliveira, para avaliação dos candidatos ao projeto Vitae. Fortaleza, 07/01/2020.  -->
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+
+<title>SISTEMA DE PACIENTES</title>
+
+<link rel="stylesheet" type="text/css" href="CSS/style.css" />
+
+</head>
+
+<body style="background-color: #FFF;">
+
+	<!-- CONTEUDO -->
+	<div id="conteudoGeral">
+		<div id="conteudoPagina">
+			<h:form id="formPaginaPrincipal">
+				<rich:toolBar height="30px">
+					<rich:dropDownMenu>
+						<f:facet name="label">
+							<h:panelGroup>
+								<h:outputText value="Cadastro" />
+							</h:panelGroup>
+						</f:facet>
+						<rich:menuItem value="Clínica"></rich:menuItem>
+						<rich:menuItem value="Leito"></rich:menuItem>
+						<rich:menuItem value="Internação"></rich:menuItem>
+						<rich:menuItem value="Paciente"></rich:menuItem>
+					</rich:dropDownMenu>
+
+					<rich:dropDownMenu>
+						<f:facet name="label">
+							<h:panelGroup>
+								<h:outputText value="Relatório" />
+							</h:panelGroup>
+						</f:facet>
+						<rich:menuItem value="Clínica"></rich:menuItem>
+						<rich:menuItem value="Leito"></rich:menuItem>
+						<rich:menuItem value="Internação"></rich:menuItem>
+						<rich:menuItem value="Paciente"></rich:menuItem>
+					</rich:dropDownMenu>
+
+					<rich:dropDownMenu>
+						<f:facet name="label">
+							<h:panelGroup>
+								<h:outputText value="Sobre" />
+							</h:panelGroup>
+						</f:facet>
+						<rich:menuItem value="Clínica"></rich:menuItem>
+					</rich:dropDownMenu>
+				</rich:toolBar>
+			</h:form>
+
+			<ui:insert name="conteudo">
+
+			</ui:insert>
+
+		</div>
+	</div>
+	<br clear="all" />
+
+</body>
+</html>

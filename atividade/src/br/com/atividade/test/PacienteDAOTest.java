@@ -1,11 +1,10 @@
 package br.com.atividade.test;
 
-import java.util.List;
-
 import org.junit.Ignore;
 import org.junit.Test;
 
 import br.com.atividade.dao.PacienteDAO;
+import br.com.atividade.dao.PacienteDAOImpl;
 import br.com.atividade.domain.Paciente;
 
 public class PacienteDAOTest {
@@ -13,43 +12,41 @@ public class PacienteDAOTest {
 	@Test
 	@Ignore
 	public void salvar() {
+		System.out.println("Iniciando inserção");
 		Paciente paciente = new Paciente();
-		paciente.setNome("Maria José");
-		paciente.setIdade(18);
+		paciente.setNome("");
+		paciente.setIdade(15);
 
-		PacienteDAO pacienteDAO = new PacienteDAO();
+		PacienteDAO pacienteDAO = new PacienteDAOImpl();
 		pacienteDAO.salvar(paciente);
 	}
 
 	@Test
 	@Ignore
 	public void excluir() {
-		Paciente paciente = new Paciente();
-		paciente.setId(9L);
+		System.out.println("Iniciando exclusão");
+		PacienteDAO pacienteDAO = new PacienteDAOImpl();
+		Paciente pacienteBuscado = pacienteDAO.pesquisaPorId(Paciente.class, 10L);
 
-		PacienteDAO pacienteDAO = new PacienteDAO();
-		pacienteDAO.excluir(paciente);
+		pacienteDAO.excluir(pacienteBuscado);
 	}
 
 	@Test
 	@Ignore
 	public void listar() {
-		PacienteDAO pacienteDAO = new PacienteDAO();
-		List<Paciente> pacientes = pacienteDAO.listar();
+		PacienteDAO pacienteDAO = new PacienteDAOImpl();
+		pacienteDAO.listar(Paciente.class);
 
-		for (int i = 0; i < pacientes.size(); i++) {
-			System.out.println("Id: " + pacientes.get(i).getId() + " - Nome: " + pacientes.get(i).getNome()
-					+ " - Idade: " + pacientes.get(i).getIdade());
-		}
 	}
-	
+
 	@Test
 	public void editar() {
 		Paciente paciente = new Paciente();
 		paciente.setId(1L);
 		paciente.setNome("Luciano Brito dos Santos");
-		
-		PacienteDAO pacienteDAO = new PacienteDAO();
+		paciente.setIdade(1000000);
+
+		PacienteDAO pacienteDAO = new PacienteDAOImpl();
 		pacienteDAO.editar(paciente);
 	}
 

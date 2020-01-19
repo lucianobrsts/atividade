@@ -2,10 +2,13 @@ package br.com.atividade.bean;
 
 import java.io.Serializable;
 
+import javax.annotation.ManagedBean;
+
 /**
  * Prova elaborada por Daniel Oliveira, para avaliação dos candidatos ao projeto
  * Vitae. Fortaleza, 07/01/2020.
  */
+@ManagedBean
 public class PaginaPrincipalBean implements Serializable {
 
 	/**

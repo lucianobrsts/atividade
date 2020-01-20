@@ -23,17 +23,29 @@
 			<rich:separator />
 
 			<rich:panel header="Cadastro de Pacientes">
-				<h:panelGrid columns="2" id="panelPacienteCadastro">
+				<h:panelGrid columns="3" id="panelPacienteCadastro">
+
 					<h:outputText value="Nome:" />
-					<h:inputText id="nome"/>
-					
+					<h:inputText id="nome" maxlength="50" size="40" required="true"
+						requiredMessage="O nome do paciente é obrigatório."
+						value="#{pacienteBean.pacienteCadastro.nome}" />
+					<rich:message for="nome" ajaxRendered="true" />
+
 					<h:outputText value="Idade:" />
-					<h:inputText id="idade" />
+					<h:inputText id="idade" maxlength="3" size="15" required="true"
+						requiredMessage="A idade do paciente é obrigatório."
+						value="#{pacienteBean.pacienteCadastro.idade}" />
+					<rich:message for="idade" ajaxRendered="true" />
+
 				</h:panelGrid>
-				
+
 				<h:panelGrid columns="2">
-					<h:commandButton value="Salvar" />
-					<h:commandButton value="Cancelar" />
+
+					<h:commandButton value="Salvar"
+						actionListener="#{pacienteBean.salvar()}" />
+
+					<h:commandButton value="Voltar"
+						action="#{paginaPrincipalBean.paginaMenu()}" ajaxSingle="false" />
 				</h:panelGrid>
 
 			</rich:panel>

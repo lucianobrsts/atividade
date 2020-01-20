@@ -10,9 +10,15 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#pages#principalMenu.xhtml"
-  PATH="/pages/principalMenu.xhtml" SHAPE="448,17,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#pages#principalMenu.xhtml:0" NAME="item"
-   PATH="/pages/principalMenu.xhtml" model-entity="JSFProcessItem">
+  PATH="/pages/principalMenu.xhtml" SHAPE="448,17,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#pacienteCadastro.xhtml"
+  PATH="/pages/pacienteCadastro.xhtml" SHAPE="656,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#relatorio.xhtml"
+  PATH="/pages/relatorio.xhtml" SHAPE="672,177,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#sobre.xhtml" PATH="/pages/sobre.xhtml"
+  SHAPE="688,321,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="448,385,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
     ID="pacienteCadastro::#pages#pacienteCadastro.xhtml" NAME="output"
     PATH="/pages/pacienteCadastro.xhtml"
@@ -20,6 +26,18 @@
     TITLE="pacienteCadastro" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#pages#pacienteCadastro.xhtml"
-  PATH="/pages/pacienteCadastro.xhtml" SHAPE="656,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:*:1" PATH="*" SHAPE="448,465,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:1" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="relatorio::#pages#relatorio.xhtml"
+    NAME="output" PATH="/pages/relatorio.xhtml"
+    TARGET="rules:#pages#relatorio.xhtml" TITLE="relatorio" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:2" PATH="*" SHAPE="448,577,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:2" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="sobre::#pages#sobre.xhtml" NAME="output"
+    PATH="/pages/sobre.xhtml" TARGET="rules:#pages#sobre.xhtml"
+    TITLE="sobre" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
 </PROCESS>

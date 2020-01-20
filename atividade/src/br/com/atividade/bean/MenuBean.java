@@ -15,5 +15,13 @@ public class MenuBean implements Serializable {
 	public String pacienteCadastro() {
 		return "pacienteCadastro";
 	}
+	
+	public String relatorio() {
+		return "relatorio";
+	}
+	
+	public String sobre() {
+		return "sobre";
+	}
 
 }

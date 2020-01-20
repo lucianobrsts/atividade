@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+					  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="/templates/templateMenu.xhtml">
+
+	<ui:define name="headHtml">
+		<!-- pacientePesquisa.xhtml -->
+	</ui:define>
+
+	<ui:define name="conteudo">
+		<!-- Prova elaborada por Daniel Oliveira, para avaliação dos candidatos ao projeto Vitae. Fortaleza, 07/01/2020. -->
+
+		
+
+		<h:form id="formPacientePesquisa">
+			<br />
+			<rich:separator />
+
+			<rich:panel header="Pesquisa de Pacientes">
+
+				<rich:dataTable value="#{pacienteBean.listaPacientes}"
+					var="paciente" id="tabelaPacientePesquisa" rows="10"
+					rowClasses="odd-row, even-row" styleClass="stable">
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Id " />
+						</f:facet>
+						<h:outputText value="#{paciente.id}" />
+					</rich:column>
+					<rich:column filterBy="#{paciente.nome}" sortBy="#{paciente.nome}">
+						<f:facet name="header">
+							<h:outputText value="Nome" />
+						</f:facet>
+						<h:outputText value="#{paciente.nome}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Idade" />
+						</f:facet>
+						<h:outputText value="#{paciente.idade}" />
+					</rich:column>
+				</rich:dataTable>
+
+			</rich:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

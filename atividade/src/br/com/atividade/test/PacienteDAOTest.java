@@ -12,9 +12,8 @@ public class PacienteDAOTest {
 	@Test
 	@Ignore
 	public void salvar() {
-		System.out.println("Iniciando inserção");
 		Paciente paciente = new Paciente();
-		paciente.setNome("");
+		paciente.setNome("Teste");
 		paciente.setIdade(15);
 
 		PacienteDAO pacienteDAO = new PacienteDAOImpl();
@@ -24,9 +23,8 @@ public class PacienteDAOTest {
 	@Test
 	@Ignore
 	public void excluir() {
-		System.out.println("Iniciando exclusão");
 		PacienteDAO pacienteDAO = new PacienteDAOImpl();
-		Paciente pacienteBuscado = pacienteDAO.pesquisaPorId(Paciente.class, 10L);
+		Paciente pacienteBuscado = pacienteDAO.pesquisaPorId(Paciente.class, 11L);
 
 		pacienteDAO.excluir(pacienteBuscado);
 	}
@@ -40,6 +38,7 @@ public class PacienteDAOTest {
 	}
 
 	@Test
+	@Ignore
 	public void editar() {
 		Paciente paciente = new Paciente();
 		paciente.setId(1L);

@@ -2,6 +2,9 @@ package br.com.atividade.bean;
 
 import java.io.Serializable;
 
+import javax.annotation.ManagedBean;
+
+@ManagedBean
 public class MenuBean implements Serializable {
 
 	/**

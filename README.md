@@ -1,6 +1,6 @@
 # Atividade
 
-Projeto voltado para o aprendizado e tarefa de seleção para vaga de emprego. Rrelacionado ao framework jsf. 
+Projeto voltado para o aprendizado e tarefa de seleção para vaga de emprego. Relacionado ao framework jsf. 
 Foram abordados conceitos como:
  - Configuração do ambiente de desenvolvimento, 
  - Managed beans, 
@@ -12,6 +12,4 @@ Foram abordados conceitos como:
  - Componentes RichFaces,
  - Integração com JPA,
  - Banco de dados PostgreSQL
- - Desenvolvimento de CRUD
- 
- Como adicional, foi acrescentado a utilização do Maven para controle de dependências. 
+ - Desenvolvimento de CRUD. 

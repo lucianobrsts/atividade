@@ -18,17 +18,14 @@
 	<ui:define name="conteudo">
 		<!-- Prova elaborada por Daniel Oliveira, para avaliação dos candidatos ao projeto Vitae. Fortaleza, 07/01/2020. -->
 
-		
-
 		<h:form id="formPacientePesquisa">
 			<br />
 			<rich:separator />
 
 			<rich:panel header="Pesquisa de Pacientes">
 
-				<rich:dataTable value="#{pacienteBean.listaPacientes}"
-					var="paciente" id="tabelaPacientePesquisa" rows="10"
-					rowClasses="odd-row, even-row" styleClass="stable">
+				<rich:dataTable value="#{pacienteBean.listaPacientes}" 
+					var="paciente" id="tabelaPacientePesquisa" rows="10">
 					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Id " />
@@ -48,7 +45,6 @@
 						<h:outputText value="#{paciente.idade}" />
 					</rich:column>
 				</rich:dataTable>
-
 			</rich:panel>
 		</h:form>
 	</ui:define>

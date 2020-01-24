@@ -13,6 +13,10 @@ public class PacienteBean {
 	private List<Paciente> listaPacientes;
 	private List<Paciente> listaPacientesFiltrados;
 
+	public PacienteBean() {
+		carregarPesquisa();
+	}
+
 	public void novo() {
 		pacienteCadastro = new Paciente();
 	}

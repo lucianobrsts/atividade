@@ -24,7 +24,7 @@
 
 			<rich:panel header="Pesquisa de Pacientes">
 
-				<rich:dataTable value="#{pacienteBean.listaPacientes}" 
+				<rich:dataTable value="#{pacienteBean.listaPacientes}"
 					var="paciente" id="tabelaPacientePesquisa" rows="10">
 					<rich:column>
 						<f:facet name="header">
@@ -32,17 +32,27 @@
 						</f:facet>
 						<h:outputText value="#{paciente.id}" />
 					</rich:column>
+					
 					<rich:column filterBy="#{paciente.nome}" sortBy="#{paciente.nome}">
 						<f:facet name="header">
 							<h:outputText value="Nome" />
 						</f:facet>
 						<h:outputText value="#{paciente.nome}" />
 					</rich:column>
+					
 					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Idade" />
 						</f:facet>
 						<h:outputText value="#{paciente.idade}" />
+					</rich:column>
+					
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Opções" />
+						</f:facet>
+						<h:commandButton value="Editar" />
+						<h:commandButton value="Excluir" />
 					</rich:column>
 				</rich:dataTable>
 			</rich:panel>

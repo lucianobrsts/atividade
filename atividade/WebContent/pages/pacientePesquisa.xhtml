@@ -24,28 +24,28 @@
 
 				<rich:dataTable value="#{pacienteBean.listaPacientes}"
 					var="paciente" id="tabelaPacientePesquisa" rows="10">
-					<rich:column>
+					<rich:column width="70" style="text-align: center;">
 						<f:facet name="header">
 							<h:outputText value="Id " />
 						</f:facet>
 						<h:outputText value="#{paciente.id}" />
 					</rich:column>
 
-					<rich:column filterBy="#{paciente.nome}" sortBy="#{paciente.nome}">
+					<rich:column filterBy="#{paciente.nome}" sortBy="#{paciente.nome}" width="250">
 						<f:facet name="header">
 							<h:outputText value="Nome" />
 						</f:facet>
 						<h:outputText value="#{paciente.nome}" />
 					</rich:column>
 
-					<rich:column>
+					<rich:column width="100" style="text-align: center;">
 						<f:facet name="header">
 							<h:outputText value="Idade" />
 						</f:facet>
 						<h:outputText value="#{paciente.idade}" />
 					</rich:column>
 
-					<rich:column>
+					<rich:column width="150" style="text-align: center;">
 						<f:facet name="header">
 							<h:outputText value="Opções" />
 						</f:facet>

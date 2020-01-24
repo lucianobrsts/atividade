@@ -16,8 +16,6 @@
 	</ui:define>
 
 	<ui:define name="conteudo">
-		<!-- Prova elaborada por Daniel Oliveira, para avaliação dos candidatos ao projeto Vitae. Fortaleza, 07/01/2020. -->
-
 		<h:form id="formPacientePesquisa">
 			<br />
 			<rich:separator />
@@ -32,21 +30,21 @@
 						</f:facet>
 						<h:outputText value="#{paciente.id}" />
 					</rich:column>
-					
+
 					<rich:column filterBy="#{paciente.nome}" sortBy="#{paciente.nome}">
 						<f:facet name="header">
 							<h:outputText value="Nome" />
 						</f:facet>
 						<h:outputText value="#{paciente.nome}" />
 					</rich:column>
-					
+
 					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Idade" />
 						</f:facet>
 						<h:outputText value="#{paciente.idade}" />
 					</rich:column>
-					
+
 					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Opções" />
@@ -54,6 +52,9 @@
 						<h:commandButton value="Editar" />
 						<h:commandButton value="Excluir" />
 					</rich:column>
+					<f:facet name="footer">
+						<rich:datascroller page="#{pacienteBean.page}" />
+					</f:facet>
 				</rich:dataTable>
 			</rich:panel>
 		</h:form>

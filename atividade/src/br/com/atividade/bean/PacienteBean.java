@@ -12,6 +12,7 @@ public class PacienteBean {
 	private Paciente pacienteCadastro;
 	private List<Paciente> listaPacientes;
 	private List<Paciente> listaPacientesFiltrados;
+	private int page = 1;
 
 	public PacienteBean() {
 		carregarPesquisa();
@@ -70,5 +71,15 @@ public class PacienteBean {
 	public void setListaPacientesFiltrados(List<Paciente> listaPacientesFiltrados) {
 		this.listaPacientesFiltrados = listaPacientesFiltrados;
 	}
+
+	public int getPage() {
+		return page;
+	}
+
+	public void setPage(int page) {
+		this.page = page;
+	}
+	
+	
 
 }

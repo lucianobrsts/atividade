@@ -23,7 +23,7 @@
 			<rich:panel header="Pacientes">
 
 				<rich:dataTable value="#{pacienteBean.listaPacientes}"
-					var="paciente" id="tabelaPacientePesquisa" rows="10">
+					var="paciente" id="tabelaPacienteListagem" rows="10">
 					<rich:column width="70" style="text-align: center;">
 						<f:facet name="header">
 							<h:outputText value="Id " />
@@ -61,7 +61,7 @@
 					</rich:column>
 
 					<f:facet name="footer">
-						<rich:datascroller page="#{pacienteBean.page}" />
+						<rich:datascroller />
 					</f:facet>
 				</rich:dataTable>
 
@@ -73,37 +73,49 @@
 		</h:form>
 
 		<!-- Modal Novo -->
-		<h:form id="formPacienteNovo">
-			<rich:modalPanel id="modalNovo" width="400" height="150"
-				moveable="true">
-				<f:facet name="header">
-					<h:outputText value="Paciente Novo" />
-				</f:facet>
-
+		<rich:modalPanel id="modalNovo" width="500" height="150"
+			onmaskclick="#{rich:component('modalNovo')}.hide()" moveable="true">
+			<f:facet name="header">
+				<h:outputText value="Paciente - Novo" />
+			</f:facet>
+			<f:facet name="controls">
+				<h:outputLink value="#"
+					onclick="#{rich:component('modalNovo')}.hide(); return false;"
+					style="color: inherit; text-decoration: none;">
+						X
+						</h:outputLink>
+			</f:facet>
+			<h:form id="formPacienteNovo">
 				<h:panelGrid columns="3" id="panelPacienteNovo">
-					<h:outputText value="Nome:" />
+					<h:outputLabel value="Nome:" />
 					<h:inputText id="nome" maxlength="50" size="40" required="true"
 						requiredMessage="O nome do paciente é obrigatório."
-						value="#{pacienteBean.pacienteCadastro.nome}" />
-					<rich:message for="nome" ajaxRendered="true" />
+						value="#{pacienteBean.pacienteCadastro.nome}">
+						<f:validateLength minimum="3" maximum="50" />
+					</h:inputText>
+					<rich:message for="nome" ajaxRendered="true"
+						style="color: red; font-weight: bold" />
 
-					<h:outputText value="Idade:" />
+					<h:outputLabel value="Idade:" />
 					<h:inputText id="idade" maxlength="3" size="10" required="true"
 						requiredMessage="A idade do paciente é obrigatório."
 						value="#{pacienteBean.pacienteCadastro.idade}" />
-					<rich:message for="idade" ajaxRendered="true" />
+					<rich:message for="idade" ajaxRendered="true"
+						style="color: red; font-weight: bold;"/>
 				</h:panelGrid>
 
 				<h:panelGrid columns="2">
-					<h:commandButton value="Salvar"
-						actionListener="#{pacienteBean.salvar()}" />
+						<a4j:commandButton value="Gravar" reRender="formPacienteNovo"
+							action="#{pacienteBean.salvar()}"
+							oncomplete="if (#{facesContext.maximumSeverity==null})#{rich:component('modalNovo')}.hide();">
+						</a4j:commandButton>
 
-					<a4j:commandButton value="Cancelar"
-						onclick="Richfaces.hideModalPanel('modalNovo')" ajaxSingle="true">
-					</a4j:commandButton>
+						<a4j:commandButton value="Cancelar" reRender="formPacienteNovo"
+							onclick="Richfaces.hideModalPanel('modalNovo')" ajaxSingle="true">
+						</a4j:commandButton>
 				</h:panelGrid>
-			</rich:modalPanel>
-		</h:form>
+			</h:form>
+		</rich:modalPanel>
 
 		<!-- Modal Editar -->
 		<h:form id="formPacienteEditar">
@@ -147,12 +159,14 @@
 					<h:outputText value="Paciente Excluir" />
 				</f:facet>
 
-				<h:panelGrid columns="3" id="panelPacienteExcluir">
+				<h:panelGrid columns="2" id="panelPacienteExcluir">
 					<h:outputText value="Nome:" />
-					<h:outputText value="#{pacienteBean.pacienteCadastro.nome}" />
+					<h:inputText value="#{pacienteBean.pacienteCadastro.nome}"
+						disabled="true" />
 
 					<h:outputText value="Idade:" />
-					<h:outputText value="#{pacienteBean.pacienteCadastro.idade}" />
+					<h:inputText value="#{pacienteBean.pacienteCadastro.idade}"
+						disabled="true" />
 				</h:panelGrid>
 
 				<h:panelGrid columns="2">

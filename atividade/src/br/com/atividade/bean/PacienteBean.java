@@ -12,7 +12,6 @@ public class PacienteBean {
 	private Paciente pacienteCadastro;
 	private List<Paciente> listaPacientes;
 	private List<Paciente> listaPacientesFiltrados;
-	private int page = 1;
 
 	public PacienteBean() {
 		carregarPesquisa();
@@ -22,18 +21,24 @@ public class PacienteBean {
 		pacienteCadastro = new Paciente();
 	}
 
-	public void salvar() {
+	public boolean salvar() {
 		try {
 			PacienteDAO pacienteDAO = new PacienteDAOImpl();
 			pacienteDAO.salvar(pacienteCadastro);
 
-			pacienteCadastro = new Paciente();
-
 			FacesUtil.adicionarMensagemInfo("Paciente salvo com sucesso.");
+			return true;
 		} catch (Exception e) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar salvar um paciente: " + e.getMessage());
+		} finally {
+			clear();
 		}
+		return false;
+	}
 
+	public void clear() {
+		pacienteCadastro.setIdade(null);
+		pacienteCadastro.setNome(null);
 	}
 
 	public void carregarPesquisa() {
@@ -71,15 +76,5 @@ public class PacienteBean {
 	public void setListaPacientesFiltrados(List<Paciente> listaPacientesFiltrados) {
 		this.listaPacientesFiltrados = listaPacientesFiltrados;
 	}
-
-	public int getPage() {
-		return page;
-	}
-
-	public void setPage(int page) {
-		this.page = page;
-	}
-	
-	
 
 }

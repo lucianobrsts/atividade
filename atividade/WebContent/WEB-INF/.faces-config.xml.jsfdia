@@ -11,8 +11,6 @@
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#pages#principalMenu.xhtml"
   PATH="/pages/principalMenu.xhtml" SHAPE="448,17,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#pages#pacienteCadastro.xhtml"
-  PATH="/pages/pacienteCadastro.xhtml" SHAPE="656,33,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#pages#relatorio.xhtml"
   PATH="/pages/relatorio.xhtml" SHAPE="672,177,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#pages#sobre.xhtml" PATH="/pages/sobre.xhtml"
@@ -20,10 +18,10 @@
  <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="448,385,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
-    ID="pacienteCadastro::#pages#pacienteCadastro.xhtml" NAME="output"
-    PATH="/pages/pacienteCadastro.xhtml"
-    TARGET="rules:#pages#pacienteCadastro.xhtml"
-    TITLE="pacienteCadastro" model-entity="JSFProcessItemOutput"/>
+    ID="pacientePesquisa::#pages#pacientePesquisa.xhtml" NAME="output"
+    PATH="/pages/pacientePesquisa.xhtml"
+    TARGET="rules:#pages#pacientePesquisa.xhtml"
+    TITLE="pacientePesquisa" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:*:1" PATH="*" SHAPE="448,465,0,0" model-entity="JSFProcessGroup">
@@ -40,4 +38,6 @@
     TITLE="sobre" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#pacientePesquisa.xhtml"
+  PATH="/pages/pacientePesquisa.xhtml" SHAPE="656,705,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

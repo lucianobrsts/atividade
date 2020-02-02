@@ -12,8 +12,8 @@ public class MenuBean implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public String pacienteCadastro() {
-		return "pacienteCadastro";
+	public String pacientePesquisa() {
+		return "pacientePesquisa";
 	}
 	
 	public String relatorio() {

@@ -35,8 +35,8 @@
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
-			<from-outcome>pacienteCadastro</from-outcome>
-			<to-view-id>/pages/pacienteCadastro.xhtml</to-view-id>
+			<from-outcome>pacientePesquisa</from-outcome>
+			<to-view-id>/pages/pacientePesquisa.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>

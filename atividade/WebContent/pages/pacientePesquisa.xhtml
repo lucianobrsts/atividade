@@ -66,7 +66,7 @@
 				</rich:dataTable>
 
 				<br />
-				<a4j:commandButton value="Novo"
+				<a4j:commandButton value="Novo" focus="nomeNovo"
 					onclick="Richfaces.showModalPanel('modalNovo')" ajaxSingle="true">
 				</a4j:commandButton>
 			</rich:panel>
@@ -86,12 +86,12 @@
 						</h:outputLink>
 			</f:facet>
 			<h:form id="formPacienteNovo">
-			
-			<br />
-			
+
+				<br />
+
 				<h:panelGrid columns="3" id="panelPacienteNovo">
 					<h:outputLabel value="Nome:" />
-					<h:inputText id="nome" maxlength="50" size="40" required="true"
+					<h:inputText id="nomeNovo" maxlength="50" size="40" required="true"
 						requiredMessage="O nome do paciente é obrigatório."
 						value="#{pacienteBean.pacienteCadastro.nome}">
 						<f:validateLength minimum="3" maximum="50" />
@@ -106,12 +106,11 @@
 					<rich:message for="idade" ajaxRendered="true"
 						style="color: red; font-weight: bold;" />
 				</h:panelGrid>
-				
+
 				<br />
-				
+
 				<h:panelGrid columns="2">
-					<a4j:commandButton value="Gravar" reRender="formPacienteNovo"
-						action="#{pacienteBean.salvar()}"
+					<a4j:commandButton value="Gravar" action="#{pacienteBean.salvar()}"
 						oncomplete="javascript:Richfaces.hideModalPanel('modalNovo');">
 					</a4j:commandButton>
 

@@ -21,24 +21,24 @@ public class PacienteBean {
 		pacienteCadastro = new Paciente();
 	}
 
-	public boolean salvar() {
+	public void salvar() {
 		try {
 			PacienteDAO pacienteDAO = new PacienteDAOImpl();
 			pacienteDAO.salvar(pacienteCadastro);
 
 			FacesUtil.adicionarMensagemInfo("Paciente salvo com sucesso.");
-			return true;
 		} catch (Exception e) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar salvar um paciente: " + e.getMessage());
-		} finally {
-			clear();
 		}
-		return false;
 	}
 
-	public void clear() {
-		pacienteCadastro.setIdade(null);
-		pacienteCadastro.setNome(null);
+	public boolean fecharModalPanel() {
+
+		if (pacienteCadastro.getNome() != null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public void carregarPesquisa() {

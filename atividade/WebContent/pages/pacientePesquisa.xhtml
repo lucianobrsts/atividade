@@ -66,8 +66,9 @@
 				</rich:dataTable>
 
 				<br />
-				<a4j:commandButton value="Novo" focus="nomeNovo"
-					onclick="Richfaces.showModalPanel('modalNovo')" ajaxSingle="true">
+				<a4j:commandButton value="Novo" focus="nome"
+					onclick="document.getElementById('formPacienteNovo').reset();Richfaces.showModalPanel('modalNovo')"
+					ajaxSingle="true">
 				</a4j:commandButton>
 			</rich:panel>
 		</h:form>
@@ -91,7 +92,7 @@
 
 				<h:panelGrid columns="3" id="panelPacienteNovo">
 					<h:outputLabel value="Nome:" />
-					<h:inputText id="nomeNovo" maxlength="50" size="40" required="true"
+					<h:inputText id="nome" maxlength="50" size="40" required="true"
 						requiredMessage="O nome do paciente é obrigatório."
 						value="#{pacienteBean.pacienteCadastro.nome}">
 						<f:validateLength minimum="3" maximum="50" />
@@ -111,7 +112,8 @@
 
 				<h:panelGrid columns="2">
 					<a4j:commandButton value="Gravar" action="#{pacienteBean.salvar()}"
-						oncomplete="javascript:Richfaces.hideModalPanel('modalNovo');">
+						data="#{pacienteBean.fecharModalPanel()}"
+						oncomplete="if(data == true){Richfaces.hideModalPanel('modalNovo')}">
 					</a4j:commandButton>
 
 					<a4j:commandButton value="Cancelar" reRender="formPacienteNovo"

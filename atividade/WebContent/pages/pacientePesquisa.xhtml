@@ -81,11 +81,14 @@
 			<f:facet name="controls">
 				<h:outputLink value="#"
 					onclick="#{rich:component('modalNovo')}.hide(); return false;"
-					style="color: inherit; text-decoration: none;">
+					style="color: inherit; text-decoration: none; font-size: 12px; margin-right:8px;">
 						X
 						</h:outputLink>
 			</f:facet>
 			<h:form id="formPacienteNovo">
+			
+			<br />
+			
 				<h:panelGrid columns="3" id="panelPacienteNovo">
 					<h:outputLabel value="Nome:" />
 					<h:inputText id="nome" maxlength="50" size="40" required="true"
@@ -101,18 +104,20 @@
 						requiredMessage="A idade do paciente é obrigatório."
 						value="#{pacienteBean.pacienteCadastro.idade}" />
 					<rich:message for="idade" ajaxRendered="true"
-						style="color: red; font-weight: bold;"/>
+						style="color: red; font-weight: bold;" />
 				</h:panelGrid>
-
+				
+				<br />
+				
 				<h:panelGrid columns="2">
-						<a4j:commandButton value="Gravar" reRender="formPacienteNovo"
-							action="#{pacienteBean.salvar()}"
-							oncomplete="if (#{facesContext.maximumSeverity==null})#{rich:component('modalNovo')}.hide();">
-						</a4j:commandButton>
+					<a4j:commandButton value="Gravar" reRender="formPacienteNovo"
+						action="#{pacienteBean.salvar()}"
+						oncomplete="javascript:Richfaces.hideModalPanel('modalNovo');">
+					</a4j:commandButton>
 
-						<a4j:commandButton value="Cancelar" reRender="formPacienteNovo"
-							onclick="Richfaces.hideModalPanel('modalNovo')" ajaxSingle="true">
-						</a4j:commandButton>
+					<a4j:commandButton value="Cancelar" reRender="formPacienteNovo"
+						onclick="Richfaces.hideModalPanel('modalNovo')" ajaxSingle="true">
+					</a4j:commandButton>
 				</h:panelGrid>
 			</h:form>
 		</rich:modalPanel>

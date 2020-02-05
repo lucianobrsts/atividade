@@ -15,11 +15,23 @@ public class MenuBean implements Serializable {
 	public String pacientePesquisa() {
 		return "pacientePesquisa";
 	}
-	
+
+	public String clinicaPesquisa() {
+		return "clinicaPesquisa";
+	}
+
+	public String leitoInternacaoPesquisa() {
+		return "leitoInternacaoPesquisa";
+	}
+
+	public String leitoPesquisa() {
+		return "leitoPesquisa";
+	}
+
 	public String relatorio() {
 		return "relatorio";
 	}
-	
+
 	public String sobre() {
 		return "sobre";
 	}

@@ -1,9 +1,29 @@
 package br.com.atividade.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "leito")
 public class Leito {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Long id;
+
+	@Column(name = "descricao")
 	private String descricao;
+
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "clinica_id", referencedColumnName = "id", nullable = false)
 	private Clinica clinica;
 
 	@Override

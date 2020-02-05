@@ -24,9 +24,9 @@
 	</managed-bean>
 
 	<navigation-rule>
-		<from-view-id>/pages/paginaPrincipal.xhtml</from-view-id>
+		<from-view-id>*</from-view-id>
 		<navigation-case>
-			<from-outcome>pricipalMenu</from-outcome>
+			<from-outcome>principalMenu</from-outcome>
 			<to-view-id>/pages/principalMenu.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>

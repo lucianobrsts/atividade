@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PROCESS model-entity="JSFProcess">
- <PROCESS-ITEM NAME="rules:#pages#paginaPrincipal.xhtml"
-  PATH="/pages/paginaPrincipal.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#pages#paginaPrincipal.xhtml:0" NAME="item"
-   PATH="/pages/paginaPrincipal.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="pricipalMenu::#pages#principalMenu.xhtml"
-    NAME="output" PATH="/pages/principalMenu.xhtml"
-    TARGET="rules:#pages#principalMenu.xhtml" TITLE="pricipalMenu" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#pages#principalMenu.xhtml"
   PATH="/pages/principalMenu.xhtml" SHAPE="448,17,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#pages#relatorio.xhtml"
@@ -17,14 +8,21 @@
   SHAPE="688,321,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="448,385,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="principalMenu::#pages#principalMenu.xhtml"
+    NAME="output" PATH="/pages/principalMenu.xhtml"
+    TARGET="rules:#pages#principalMenu.xhtml" TITLE="principalMenu" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:1" PATH="*" SHAPE="448,465,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:1" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
     ID="clinicaPesquisa::#pages#clinicaPesquisa.xhtml" NAME="output"
     PATH="/pages/clinicaPesquisa.xhtml"
     TARGET="rules:#pages#clinicaPesquisa.xhtml" TITLE="clinicaPesquisa" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:*:1" PATH="*" SHAPE="448,465,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:*:1" NAME="item" PATH="*" model-entity="JSFProcessItem">
+ <PROCESS-ITEM NAME="rules:*:2" PATH="*" SHAPE="448,577,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:2" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
     ID="leitoInterncaoPesquisa::#pages#leitoInternacaoPesquisa.xhtml"
     NAME="output" PATH="/pages/leitoInternacaoPesquisa.xhtml"
@@ -32,17 +30,19 @@
     TITLE="leitoInterncaoPesquisa" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:*:2" PATH="*" SHAPE="448,577,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:*:2" NAME="item" PATH="*" model-entity="JSFProcessItem">
+ <PROCESS-ITEM NAME="rules:#pages#pacientePesquisa.xhtml"
+  PATH="/pages/pacientePesquisa.xhtml" SHAPE="656,705,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:*:3" PATH="*" SHAPE="448,689,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:3" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="leitoPesquisa::#pages#leitoPesquisa.xhtml"
     NAME="output" PATH="/pages/leitoPesquisa.xhtml"
     TARGET="rules:#pages#leitoPesquisa.xhtml" TITLE="leitoPesquisa" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#pages#pacientePesquisa.xhtml"
-  PATH="/pages/pacientePesquisa.xhtml" SHAPE="656,705,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:*:3" PATH="*" SHAPE="448,689,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:*:3" NAME="item" PATH="*" model-entity="JSFProcessItem">
+ <PROCESS-ITEM NAME="rules:#pages#clinicaPesquisa.xhtml"
+  PATH="/pages/clinicaPesquisa.xhtml" SHAPE="656,817,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:*:4" PATH="*" SHAPE="448,801,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:4" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
     ID="pacientePesquisa::#pages#pacientePesquisa.xhtml" NAME="output"
     PATH="/pages/pacientePesquisa.xhtml"
@@ -50,24 +50,22 @@
     TITLE="pacientePesquisa" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#pages#clinicaPesquisa.xhtml"
-  PATH="/pages/clinicaPesquisa.xhtml" SHAPE="656,817,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:*:4" PATH="*" SHAPE="448,801,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:*:4" NAME="item" PATH="*" model-entity="JSFProcessItem">
+ <PROCESS-ITEM NAME="rules:#pages#leitoInternacaoPesquisa.xhtml"
+  PATH="/pages/leitoInternacaoPesquisa.xhtml" SHAPE="656,929,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:*:5" PATH="*" SHAPE="448,913,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:5" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="relatorio::#pages#relatorio.xhtml"
     NAME="output" PATH="/pages/relatorio.xhtml"
     TARGET="rules:#pages#relatorio.xhtml" TITLE="relatorio" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#pages#leitoInternacaoPesquisa.xhtml"
-  PATH="/pages/leitoInternacaoPesquisa.xhtml" SHAPE="656,929,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:*:5" PATH="*" SHAPE="448,913,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:*:5" NAME="item" PATH="*" model-entity="JSFProcessItem">
+ <PROCESS-ITEM NAME="rules:#pages#leitoPesquisa.xhtml"
+  PATH="/pages/leitoPesquisa.xhtml" SHAPE="656,1041,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:*:6" PATH="*" SHAPE="448,1025,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:6" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="sobre::#pages#sobre.xhtml" NAME="output"
     PATH="/pages/sobre.xhtml" TARGET="rules:#pages#sobre.xhtml"
     TITLE="sobre" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#pages#leitoPesquisa.xhtml"
-  PATH="/pages/leitoPesquisa.xhtml" SHAPE="656,1041,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

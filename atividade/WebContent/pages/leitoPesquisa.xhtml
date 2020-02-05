@@ -12,53 +12,18 @@
 <ui:composition template="/templates/templateMenu.xhtml">
 
 	<ui:define name="headHtml">
-		<!-- pacientePesquisa.xhtml -->
+		<!-- leitoPesquisa.xhtml -->
 	</ui:define>
 
 	<ui:define name="conteudo">
-		<h:form id="formPacienteListagem">
+		<h:form id="formLeitoListagem">
 			<br />
 			<rich:separator />
 
-			<rich:panel header="Pacientes">
+			<rich:panel header="Leitos">
 
-				<rich:dataTable value="#{pacienteBean.listaPacientes}"
-					var="paciente" id="tabelaPacienteListagem" rows="10">
-					<rich:column width="70" style="text-align: center;">
-						<f:facet name="header">
-							<h:outputText value="Id " />
-						</f:facet>
-						<h:outputText value="#{paciente.id}" />
-					</rich:column>
-
-					<rich:column filterBy="#{paciente.nome}" sortBy="#{paciente.nome}"
-						width="250">
-						<f:facet name="header">
-							<h:outputText value="Nome" />
-						</f:facet>
-						<h:outputText value="#{paciente.nome}" />
-					</rich:column>
-
-					<rich:column width="100" style="text-align: center;">
-						<f:facet name="header">
-							<h:outputText value="Idade" />
-						</f:facet>
-						<h:outputText value="#{paciente.idade}" />
-					</rich:column>
-
-					<rich:column width="150" style="text-align: center;">
-						<f:facet name="header">
-							<h:outputText value="Opções" />
-						</f:facet>
-						<a4j:commandButton value="Editar"
-							onclick="Richfaces.showModalPanel('modalEditar')"
-							ajaxSingle="true">
-						</a4j:commandButton>
-						<a4j:commandButton value="Excluir"
-							onclick="Richfaces.showModalPanel('modalExcluir')"
-							ajaxSingle="true">
-						</a4j:commandButton>
-					</rich:column>
+				<rich:dataTable value="#{leitoBean.listaLeitoss}"
+					var="paciente" id="tabelaLeitoListagem" rows="10">
 
 					<f:facet name="footer">
 						<rich:datascroller />
@@ -86,105 +51,26 @@
 						X
 						</h:outputLink>
 			</f:facet>
-			<h:form id="formPacienteNovo">
+			<h:form id="formLeitoNovo">
 
 				<br />
 
-				<h:panelGrid columns="3" id="panelPacienteNovo">
-					<h:outputLabel value="Nome:" />
-					<h:inputText id="nome" maxlength="50" size="40" required="true"
-						requiredMessage="O nome do paciente é obrigatório."
-						value="#{pacienteBean.pacienteCadastro.nome}">
-						<f:validateLength minimum="3" maximum="50" />
-					</h:inputText>
-					<rich:message for="nome" ajaxRendered="true"
-						style="color: red; font-weight: bold" />
-
-					<h:outputLabel value="Idade:" />
-					<h:inputText id="idade" maxlength="3" size="10" required="true"
-						requiredMessage="A idade do paciente é obrigatório."
-						value="#{pacienteBean.pacienteCadastro.idade}" />
-					<rich:message for="idade" ajaxRendered="true"
-						style="color: red; font-weight: bold;" />
-				</h:panelGrid>
-
-				<br />
-
-				<h:panelGrid columns="2">
-					<a4j:commandButton value="Gravar" action="#{pacienteBean.salvar()}"
-						data="#{pacienteBean.fecharModalPanel()}"
-						oncomplete="if(data == true){Richfaces.hideModalPanel('modalNovo')}">
-					</a4j:commandButton>
-
-					<a4j:commandButton value="Cancelar" reRender="formPacienteNovo"
-						onclick="Richfaces.hideModalPanel('modalNovo')" ajaxSingle="true">
-					</a4j:commandButton>
-				</h:panelGrid>
 			</h:form>
 		</rich:modalPanel>
 
 		<!-- Modal Editar -->
-		<h:form id="formPacienteEditar">
+		<h:form id="formLeitoEditar">
 			<rich:modalPanel id="modalEditar" width="400" height="150">
 				<f:facet name="header">
 					<h:outputText value="Paciente Editar" />
 				</f:facet>
 
-				<h:panelGrid columns="2" id="panelPacienteEditar">
-					<h:outputLabel value="Id:" />
-					<h:inputText value="#{pacienteBean.pacienteCadastro.id}"
-						disabled="true" size="10" />
-
-					<h:outputLabel value="Nome:" />
-					<h:inputText value="#{pacienteBean.pacienteCadastro.nome}"
-						maxlength="50" size="40" required="true"
-						requiredMessage="O nome do paciente é obrigatório." />
-
-					<h:outputLabel value="Idade:" />
-					<h:inputText value="#{pacienteBean.pacienteCadastro.idade}"
-						maxlength="50" size="40" required="true"
-						requiredMessage="A idade do paciente é obrigatório." />
-				</h:panelGrid>
-
-				<h:panelGrid columns="2">
-					<h:commandButton value="Editar"
-						actionListener="#{pacienteBean.salvar()}" />
-
-					<a4j:commandButton value="Cancelar"
-						onclick="Richfaces.hideModalPanel('modalEditar')"
-						ajaxSingle="true">
-					</a4j:commandButton>
-				</h:panelGrid>
 			</rich:modalPanel>
 		</h:form>
 
 		<!-- Modal Excluir -->
-		<h:form id="formPacienteExcluir">
-			<rich:modalPanel id="modalExcluir" width="400" height="150">
-				<f:facet name="header">
-					<h:outputText value="Paciente Excluir" />
-				</f:facet>
-
-				<h:panelGrid columns="2" id="panelPacienteExcluir">
-					<h:outputText value="Nome:" />
-					<h:inputText value="#{pacienteBean.pacienteCadastro.nome}"
-						disabled="true" />
-
-					<h:outputText value="Idade:" />
-					<h:inputText value="#{pacienteBean.pacienteCadastro.idade}"
-						disabled="true" />
-				</h:panelGrid>
-
-				<h:panelGrid columns="2">
-					<h:commandButton value="Excluir"
-						actionListener="#{pacienteBean.salvar()}" />
-
-					<a4j:commandButton value="Cancelar"
-						onclick="Richfaces.hideModalPanel('modalExcluir')"
-						ajaxSingle="true">
-					</a4j:commandButton>
-				</h:panelGrid>
-			</rich:modalPanel>
+		<h:form id="formLeitoExcluir">
+		
 		</h:form>
 	</ui:define>
 </ui:composition>

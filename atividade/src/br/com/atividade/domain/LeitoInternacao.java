@@ -2,11 +2,33 @@ package br.com.atividade.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "leitointernacao")
 public class LeitoInternacao {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Long id;
+
+	@OneToOne
+	@JoinColumn(name = "leito_id", referencedColumnName = "id", nullable = false)
 	private Leito leito;
+
+	@OneToOne
+	@JoinColumn(name = "paciente_id", referencedColumnName = "id", nullable = false)
 	private Paciente paciente;
+
+	@Column(name = "datainternacao")
 	private Date dataInternacao;
 
 	@Override

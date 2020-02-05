@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import br.com.atividade.util.JPAResourceBean;
+import br.com.atividade.util.JPAResourceUtil;
 
 public class AbstractDAOImpl<T, ID extends Serializable> implements AbstractDAO<T, ID> {
 
@@ -14,7 +14,7 @@ public class AbstractDAOImpl<T, ID extends Serializable> implements AbstractDAO<
 	 */
 	private static final long serialVersionUID = 1L;
 
-	EntityManager entityManager = JPAResourceBean.getEntityManager();
+	EntityManager entityManager = JPAResourceUtil.getEntityManager();
 
 	public void salvar(T t) {
 
@@ -37,7 +37,7 @@ public class AbstractDAOImpl<T, ID extends Serializable> implements AbstractDAO<
 				entityManager.getTransaction().begin();
 			}
 			 if(entityManager.isOpen() == false) {
-				 entityManager = JPAResourceBean.getEntityManager();
+				 entityManager = JPAResourceUtil.getEntityManager();
 			 }
 			entityManager.remove(t);
 			entityManager.getTransaction().commit();

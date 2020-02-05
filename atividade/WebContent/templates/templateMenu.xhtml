@@ -35,6 +35,11 @@
 								<h:outputText value="Cadastro" />
 							</h:panelGroup>
 						</f:facet>
+						<rich:menuItem value="Clínica"
+							action="#{menuBean.clinicaPesquisa()}"></rich:menuItem>
+						<rich:menuItem value="Leito Internação"
+							action="#{menuBean.leitoInternacaoPesquisa()}"></rich:menuItem>
+						<rich:menuItem value="Leito" action="#{menuBean.leitoPesquisa()}"></rich:menuItem>
 						<rich:menuItem value="Paciente"
 							action="#{menuBean.pacientePesquisa()}"></rich:menuItem>
 					</rich:dropDownMenu>
@@ -45,8 +50,7 @@
 								<h:outputText value="Relatório" />
 							</h:panelGroup>
 						</f:facet>
-						<rich:menuItem value="Relatório"
-							action="#{menuBean.relatorio()}"></rich:menuItem>
+						<rich:menuItem value="Relatório" action="#{menuBean.relatorio()}"></rich:menuItem>
 					</rich:dropDownMenu>
 
 					<rich:dropDownMenu>
@@ -55,8 +59,7 @@
 								<h:outputText value="Sobre" />
 							</h:panelGroup>
 						</f:facet>
-						<rich:menuItem value="Sobre"
-							action="#{menuBean.sobre()}"></rich:menuItem>
+						<rich:menuItem value="Sobre" action="#{menuBean.sobre()}"></rich:menuItem>
 					</rich:dropDownMenu>
 				</rich:toolBar>
 			</h:form>

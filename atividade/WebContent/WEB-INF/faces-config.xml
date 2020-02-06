@@ -23,6 +23,24 @@
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 
+	<managed-bean>
+		<managed-bean-name>clinicaBean</managed-bean-name>
+		<managed-bean-class>br.com.atividade.bean.ClinicaBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>leitoBean</managed-bean-name>
+		<managed-bean-class>br.com.atividade.bean.LeitoBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>leitoInternacaoBean</managed-bean-name>
+		<managed-bean-class>br.com.atividade.bean.LeitoInternacaoBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>

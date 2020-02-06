@@ -62,7 +62,7 @@
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
-			<from-outcome>leitoInterncaoPesquisa</from-outcome>
+			<from-outcome>leitoInternacaoPesquisa</from-outcome>
 			<to-view-id>/pages/leitoInternacaoPesquisa.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>

@@ -24,10 +24,10 @@
  <PROCESS-ITEM NAME="rules:*:2" PATH="*" SHAPE="448,577,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:*:2" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
-    ID="leitoInterncaoPesquisa::#pages#leitoInternacaoPesquisa.xhtml"
+    ID="leitoInternacaoPesquisa::#pages#leitoInternacaoPesquisa.xhtml"
     NAME="output" PATH="/pages/leitoInternacaoPesquisa.xhtml"
     TARGET="rules:#pages#leitoInternacaoPesquisa.xhtml"
-    TITLE="leitoInterncaoPesquisa" model-entity="JSFProcessItemOutput"/>
+    TITLE="leitoInternacaoPesquisa" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#pages#pacientePesquisa.xhtml"

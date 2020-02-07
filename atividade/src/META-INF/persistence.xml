@@ -7,6 +7,11 @@
 	<persistence-unit name="medpoint"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<class>br.com.atividade.domain.Clinica</class>
+		<class>br.com.atividade.domain.Leito</class>
+		<class>br.com.atividade.domain.LeitoInterncacao</class>
+		<class>br.com.atividade.domain.Paciente</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/atividade" />

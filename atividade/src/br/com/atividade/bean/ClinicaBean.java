@@ -2,31 +2,54 @@ package br.com.atividade.bean;
 
 import java.util.List;
 
+import br.com.atividade.dao.ClinicaDAO;
+import br.com.atividade.dao.ClinicaDAOImpl;
 import br.com.atividade.domain.Clinica;
+import br.com.atividade.util.FacesUtil;
 
 public class ClinicaBean {
 
 	private Clinica clinicaCadastro;
 	private List<Clinica> listaClinicas;
 	private List<Clinica> listaClinicasFiltradas;
-	
+
 	public void novo() {
 		clinicaCadastro = new Clinica();
 	}
-	
+
 	public void salvar() {
-		
+		try {
+			ClinicaDAO clinicaDAO = new ClinicaDAOImpl();
+			clinicaDAO.salvar(clinicaCadastro);
+
+			FacesUtil.adicionarMensagemInfo("Clinica salva com sucesso.");
+		} catch (Exception e) {
+			FacesUtil.adiconarMensagemErro("Erro ao tentar salvar um paciente.");
+		}
 	}
-	
+
 	public boolean fecharModalPanel() {
-		return false;
+
+		if (clinicaCadastro.getDescricao() != null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	
+
 	public void carregarPesquisa() {
-		
+		try {
+			ClinicaDAO clinicaDAO = new ClinicaDAOImpl();
+			listaClinicas = clinicaDAO.listar(Clinica.class);
+		} catch (RuntimeException ex) {
+			FacesUtil.adiconarMensagemErro("Erro ao tentar listar as clínicas." + ex.getMessage());
+		}
 	}
-	
+
 	public Clinica getClinicaCadastro() {
+		if (clinicaCadastro == null) {
+			clinicaCadastro = new Clinica();
+		}
 		return clinicaCadastro;
 	}
 

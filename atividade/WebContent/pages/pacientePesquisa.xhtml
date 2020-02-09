@@ -74,7 +74,7 @@
 		</h:form>
 
 		<!-- Modal Novo -->
-		<rich:modalPanel id="modalNovo" width="500" height="150"
+		<rich:modalPanel id="modalNovo" width="500" height="200"
 			onmaskclick="#{rich:component('modalNovo')}.hide()" moveable="true">
 			<f:facet name="header">
 				<h:outputText value="Paciente - Novo" />
@@ -88,7 +88,7 @@
 			</f:facet>
 			<h:form id="formPacienteNovo">
 
-				<br />
+				<h:messages globalOnly="true" />
 
 				<h:panelGrid columns="3" id="panelPacienteNovo">
 					<h:outputLabel value="Nome:" />
@@ -97,15 +97,15 @@
 						value="#{pacienteBean.pacienteCadastro.nome}">
 						<f:validateLength minimum="3" maximum="50" />
 					</h:inputText>
-					<rich:message for="nome" ajaxRendered="true"
+					<rich:messages for="nome" ajaxRendered="true"
 						style="color: red; font-weight: bold" />
 
 					<h:outputLabel value="Idade:" />
-					<h:inputText id="idade" maxlength="3" size="10" required="true"
-						requiredMessage="A idade do paciente é obrigatório."
-						value="#{pacienteBean.pacienteCadastro.idade}" />
-					<rich:message for="idade" ajaxRendered="true"
-						style="color: red; font-weight: bold;" />
+						<h:inputText id="idade" maxlength="3" size="10" required="true"
+							requiredMessage="A idade do paciente é obrigatório."
+							value="#{pacienteBean.pacienteCadastro.idade}" />
+						<rich:message for="idade" ajaxRendered="true"
+							style="color: red; font-weight: bold;" />
 				</h:panelGrid>
 
 				<br />

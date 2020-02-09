@@ -10,7 +10,7 @@
 		
 		<class>br.com.atividade.domain.Clinica</class>
 		<class>br.com.atividade.domain.Leito</class>
-		<class>br.com.atividade.domain.LeitoInterncacao</class>
+		<class>br.com.atividade.domain.LeitoInternacao</class>
 		<class>br.com.atividade.domain.Paciente</class>
 
 		<properties>

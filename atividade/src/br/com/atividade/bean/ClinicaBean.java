@@ -13,6 +13,10 @@ public class ClinicaBean {
 	private List<Clinica> listaClinicas;
 	private List<Clinica> listaClinicasFiltradas;
 
+	public ClinicaBean() {
+		carregarPesquisa();
+	}
+
 	public void novo() {
 		clinicaCadastro = new Clinica();
 	}

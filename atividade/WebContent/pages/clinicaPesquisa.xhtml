@@ -33,18 +33,18 @@
 
 					<rich:column filterBy="#{clinica.descricao}" width="250">
 						<f:facet name="header">
-							<h:outputText value="Nome" />
+							<h:outputText value="Descrição" />
 						</f:facet>
 						<h:outputText value="#{clinica.descricao}" />
 					</rich:column>
-					
+
 					<rich:column width="100" style="text-align: center;">
 						<f:facet name="header">
 							<h:outputText value="Leito" />
 						</f:facet>
 						<h:outputText value="#{clinica.leito.descricao}" />
 					</rich:column>
-					
+
 					<rich:column width="150" style="text-align: center;">
 						<f:facet name="header">
 							<h:outputText value="Opções" />
@@ -87,7 +87,36 @@
 			</f:facet>
 			<h:form id="formClinicaNovo">
 
+				<h:panelGrid columns="3">
+					<h:outputLabel value="Descrição: " />
+					<h:inputText id="descricao" maxlength="50" size="40"
+						required="true" requiredMessage="O nome do leito é obrigatório."
+						value="#{clinicaBean.clinicaCadastro.descricao}">
+						<f:validateLength minimum="3" maximum="50" />
+					</h:inputText>
+					<rich:messages for="descricao" ajaxRendered="true"
+						style="color: red; font-weight: bold;" />
+
+					<h:outputLabel value="Leito: " />
+					<h:inputText id="leito" required="true"
+						requiredMessage="O leito do paciente é obrigatório."
+						value="#{clinicaBean.clinicaCadastro.leito.descricao}" />
+					<rich:message for="leito" ajaxRendered="true"
+						style="color: red; font-weight: bold;" />
+				</h:panelGrid>
+
 				<br />
+
+				<h:panelGrid columns="2">
+					<a4j:commandButton value="Gravar" action="#{clinicaBean.salvar()}"
+						data="#{clinicaBean.fecharModalPanel()}"
+						oncomplete="if(data == true){Richfaces.hideModalPanel('modalNovo')}">
+					</a4j:commandButton>
+
+					<a4j:commandButton value="Cancelar" reRender="formClinicaNovo"
+						onclick="Richfaces.hideModalPanel('modalNovo')" ajaxSingle="true">
+					</a4j:commandButton>
+				</h:panelGrid>
 
 			</h:form>
 		</rich:modalPanel>

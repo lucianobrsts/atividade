@@ -1,6 +1,9 @@
 package br.com.atividade.bean;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.faces.model.SelectItem;
 
 import br.com.atividade.dao.ClinicaDAO;
 import br.com.atividade.dao.ClinicaDAOImpl;
@@ -12,6 +15,18 @@ public class ClinicaBean {
 	private Clinica clinicaCadastro;
 	private List<Clinica> listaClinicas;
 	private List<Clinica> listaClinicasFiltradas;
+	private List<SelectItem> selectItemsclinicas;
+	private int codigoClinicaSelecionado;
+
+	public List<SelectItem> getSelectItemsClinicas() {
+		selectItemsclinicas = new ArrayList<SelectItem>();
+		selectItemsclinicas.add(new SelectItem(1, "HAPVIDA"));
+		selectItemsclinicas.add(new SelectItem(1, "CLÍNICA SIM"));
+		selectItemsclinicas.add(new SelectItem(1, "UNIMED"));
+		selectItemsclinicas.add(new SelectItem(1, "HORTOCLÍNICA"));
+		selectItemsclinicas.add(new SelectItem(1, "PRONTOCÁRDIO"));
+		return selectItemsclinicas;
+	}
 
 	public ClinicaBean() {
 		carregarPesquisa();
@@ -77,4 +92,19 @@ public class ClinicaBean {
 		this.listaClinicasFiltradas = listaClinicasFiltradas;
 	}
 
+	public List<SelectItem> getSelectItemsclinicas() {
+		return selectItemsclinicas;
+	}
+
+	public void setSelectItemsclinicas(List<SelectItem> selectItemsclinicas) {
+		this.selectItemsclinicas = selectItemsclinicas;
+	}
+
+	public int getCodigoClinicaSelecionado() {
+		return codigoClinicaSelecionado;
+	}
+
+	public void setCodigoClinicaSelecionado(int codigoClinicaSelecionado) {
+		this.codigoClinicaSelecionado = codigoClinicaSelecionado;
+	}
 }

@@ -90,7 +90,8 @@
 				<h:panelGrid columns="3">
 					<h:outputLabel value="Descrição: " />
 					<h:inputText id="descricao" maxlength="50" size="40"
-						required="true" requiredMessage="O nome do leito é obrigatório."
+						style="text-transform: uppercase;" required="true"
+						requiredMessage="O nome do leito é obrigatório."
 						value="#{clinicaBean.clinicaCadastro.descricao}">
 						<f:validateLength minimum="3" maximum="50" />
 					</h:inputText>
@@ -98,8 +99,11 @@
 						style="color: red; font-weight: bold;" />
 
 					<h:outputLabel value="Leito: " />
-					<h:selectOneMenu id="leito" >
-					
+					<h:selectOneMenu id="leito"
+						value="#{clinicaBean.codigoClinicaSelecionado}" required="true"
+						requiredMessage="O campo leito é obrigatório.">
+						<f:selectItem itemLabel="SELECIONE UM LEITO..." itemValue="" />
+						<f:selectItems value="#{clinicaBean.selectItemsClinicas}" />
 					</h:selectOneMenu>
 				</h:panelGrid>
 

@@ -21,10 +21,11 @@ public class ClinicaBean {
 	public List<SelectItem> getSelectItemsClinicas() {
 		selectItemsclinicas = new ArrayList<SelectItem>();
 		selectItemsclinicas.add(new SelectItem(1, "HAPVIDA"));
-		selectItemsclinicas.add(new SelectItem(1, "CLÍNICA SIM"));
-		selectItemsclinicas.add(new SelectItem(1, "UNIMED"));
-		selectItemsclinicas.add(new SelectItem(1, "HORTOCLÍNICA"));
-		selectItemsclinicas.add(new SelectItem(1, "PRONTOCÁRDIO"));
+		selectItemsclinicas.add(new SelectItem(2, "CLÍNICA SIM"));
+		selectItemsclinicas.add(new SelectItem(3, "UNIMED"));
+		selectItemsclinicas.add(new SelectItem(4, "HORTOCLÍNICA"));
+		selectItemsclinicas.add(new SelectItem(5, "PRONTOCÁRDIO"));
+		
 		return selectItemsclinicas;
 	}
 

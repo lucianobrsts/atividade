@@ -22,8 +22,49 @@
 
 			<rich:panel header="Leito Internação">
 
-				<rich:dataTable 
-					var="paciente" id="tabelaleitoInernacaoListagem" rows="10">
+				<rich:dataTable value="leitoInternacaoBean.listaLeitoInternacao"
+					var="leitoInternacao" id="tabelaleitoInernacaoListagem" rows="10">
+					<rich:column width="70" style="text-align: center;">
+						<f:facet name="header">
+							<h:outputText value="Id" />
+						</f:facet>
+						<h:outputText value="#{leitoInternacao.id}" />
+					</rich:column>
+
+					<rich:column width="250">
+						<f:facet name="header">
+							<h:outputText value="Leito" />
+						</f:facet>
+						<h:outputText value="#{leitoInternacao.leito.descricao}" />
+					</rich:column>
+
+					<rich:column width="100" style="text-align: center;">
+						<f:facet name="header">
+							<h:outputText value="Paciente" />
+						</f:facet>
+						<h:outputText value="#{leitoInternacao.paciente.nome}" />
+					</rich:column>
+
+					<rich:column width="100" style="text-align: center;">
+						<f:facet name="header">
+							<h:outputText value="Data Internação" />
+						</f:facet>
+						<h:outputText value="#{leitoInternacao.dataInternacao}" />
+					</rich:column>
+
+					<rich:column width="150" style="text-align: center;">
+						<f:facet name="header">
+							<h:outputText value="Opções" />
+						</f:facet>
+						<a4j:commandButton value="Editar"
+							onclick="Richfaces.showModalPanel('modalEditar')"
+							ajaxSingle="true">
+						</a4j:commandButton>
+						<a4j:commandButton value="Excluir"
+							onclick="Richfaces.showModalPanel('modalExcluir')"
+							ajaxSingle="true">
+						</a4j:commandButton>
+					</rich:column>
 
 					<f:facet name="footer">
 						<rich:datascroller />

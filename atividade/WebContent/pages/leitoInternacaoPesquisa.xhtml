@@ -22,34 +22,34 @@
 
 			<rich:panel header="Leito Internação">
 
-				<rich:dataTable value="leitoInternacaoBean.listaLeitoInternacoes"
+				<rich:dataTable value="leitoInternacaoBean.listaInternacoes"
 					var="internacao" id="tabelaleitoInernacaoListagem" rows="10">
 					<rich:column width="70" style="text-align: center;">
 						<f:facet name="header">
 							<h:outputText value="Id " />
 						</f:facet>
-						<h:outputText value="#{internacao.id}" />
+						<h:outputText />
 					</rich:column>
 
 					<rich:column width="250">
 						<f:facet name="header">
 							<h:outputText value="Leito" />
 						</f:facet>
-						<h:outputText value="#{internacao.leito.descricao}" />
+						<h:outputText />
 					</rich:column>
 
 					<rich:column width="100" style="text-align: center;">
 						<f:facet name="header">
 							<h:outputText value="Paciente" />
 						</f:facet>
-						<h:outputText value="#{internacao.paciente.nome}" />
+						<h:outputText />
 					</rich:column>
 
 					<rich:column width="100" style="text-align: center;">
 						<f:facet name="header">
 							<h:outputText value="Data Internação" />
 						</f:facet>
-						<h:outputText value="#{internacao.dataInternacao}" />
+						<h:outputText />
 					</rich:column>
 
 					<rich:column width="150" style="text-align: center;">

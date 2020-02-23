@@ -11,22 +11,23 @@ import br.com.atividade.util.FacesUtil;
 
 @ManagedBean
 public class LeitoInternacaoBean {
-	private LeitoInternacao leitoInternacaoCadastro;
-	private List<LeitoInternacao> listaLeitoInternacoes;
-	private List<LeitoInternacao> listaLeitoInternacoesFiltrados;
+	private LeitoInternacao internacaoCadastro;
+	private List<LeitoInternacao> listaInternacoes;
+	private List<LeitoInternacao> listaInternacoesFiltrados;
 
 	public LeitoInternacaoBean() {
+		System.out.println("Construtor LeitoInternacaoBean");
 		carregarPesquisa();
 	}
 
 	public void novo() {
-		leitoInternacaoCadastro = new LeitoInternacao();
+		internacaoCadastro = new LeitoInternacao();
 	}
 
 	public void salvar() {
 		try {
-			LeitoInternacaoDAO leitoInternacaoDAO = new LeitoInternacaoDAOImpl();
-			leitoInternacaoDAO.salvar(leitoInternacaoCadastro);
+			LeitoInternacaoDAO internacaoDAO = new LeitoInternacaoDAOImpl();
+			internacaoDAO.salvar(internacaoCadastro);
 
 			FacesUtil.adicionarMensagemInfo("Leito Interna��o salvo com sucesso.");
 		} catch (Exception e) {
@@ -35,7 +36,7 @@ public class LeitoInternacaoBean {
 	}
 
 	public boolean fecharModalPanel() {
-		if (leitoInternacaoCadastro.getId() != null) {
+		if (internacaoCadastro.getId() != null) {
 			return true;
 		} else {
 			return false;
@@ -43,43 +44,44 @@ public class LeitoInternacaoBean {
 	}
 
 	public void carregarPesquisa() {
+		System.out.println("CarregarPesquisa()");
 		try {
-			LeitoInternacaoDAO leitoInternacaoDAO = new LeitoInternacaoDAOImpl();
-			listaLeitoInternacoes = leitoInternacaoDAO.listar(LeitoInternacao.class);
+			LeitoInternacaoDAO internacaoDAO = new LeitoInternacaoDAOImpl();
+			listaInternacoes = internacaoDAO.listar(LeitoInternacao.class);
 		} catch (Exception e) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar listar os leitos Interna��es.");
 		}
 	}
 
 	public LeitoInternacao getLeitoCadastro() {
-		if (leitoInternacaoCadastro == null) {
-			leitoInternacaoCadastro = new LeitoInternacao();
+		if (internacaoCadastro == null) {
+			internacaoCadastro = new LeitoInternacao();
 		}
-		return leitoInternacaoCadastro;
+		return internacaoCadastro;
 	}
 
-	public LeitoInternacao getLeitoInternacaoCadastro() {
-		return leitoInternacaoCadastro;
+	public LeitoInternacao getInternacaoCadastro() {
+		return internacaoCadastro;
 	}
 
-	public void setLeitoInternacaoCadastro(LeitoInternacao leitoInternacaoCadastro) {
-		this.leitoInternacaoCadastro = leitoInternacaoCadastro;
+	public void setInternacaoCadastro(LeitoInternacao internacaoCadastro) {
+		this.internacaoCadastro = internacaoCadastro;
 	}
 
-	public List<LeitoInternacao> getListaLeitoInternacoes() {
-		return listaLeitoInternacoes;
+	public List<LeitoInternacao> getListaInternacoes() {
+		return listaInternacoes;
 	}
 
-	public void setListaLeitoInternacoes(List<LeitoInternacao> listaLeitoInternacoes) {
-		this.listaLeitoInternacoes = listaLeitoInternacoes;
+	public void setListaInternacoes(List<LeitoInternacao> listaInternacoes) {
+		this.listaInternacoes = listaInternacoes;
 	}
 
-	public List<LeitoInternacao> getListaLeitoInternacoesFiltrados() {
-		return listaLeitoInternacoesFiltrados;
+	public List<LeitoInternacao> getListaInternacoesFiltrados() {
+		return listaInternacoesFiltrados;
 	}
 
-	public void setListaLeitoInternacoesFiltrados(List<LeitoInternacao> listaLeitoInternacoesFiltrados) {
-		this.listaLeitoInternacoesFiltrados = listaLeitoInternacoesFiltrados;
+	public void setListaInternacoesFiltrados(List<LeitoInternacao> listaInternacoesFiltrados) {
+		this.listaInternacoesFiltrados = listaInternacoesFiltrados;
 	}
 
 }

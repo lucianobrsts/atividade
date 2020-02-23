@@ -47,6 +47,7 @@ public class LeitoInternacaoBean {
 		try {
 			LeitoInternacaoDAO leitoInternacaoDAO = new LeitoInternacaoDAOImpl();
 			listaLeitoInternacoes = leitoInternacaoDAO.listar(LeitoInternacao.class);
+			System.out.println(listaLeitoInternacoes.toString());
 		} catch (Exception e) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar listar os leitos Internações.");
 		}

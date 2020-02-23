@@ -34,7 +34,7 @@
 		<managed-bean-class>br.com.atividade.bean.LeitoBean</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
-	
+
 	<managed-bean>
 		<managed-bean-name>leitoInternacaoBean</managed-bean-name>
 		<managed-bean-class>br.com.atividade.bean.LeitoInternacaoBean</managed-bean-class>
@@ -49,7 +49,16 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>paginaPrincipal</from-outcome>
+			<to-view-id>/pages/paginaPrincipal.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
@@ -58,7 +67,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
@@ -67,7 +76,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
@@ -85,7 +94,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>

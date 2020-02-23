@@ -36,4 +36,8 @@ public class MenuBean implements Serializable {
 		return "sobre";
 	}
 
+	public String paginaPrincipal() {
+		return "paginaPrincipal";
+	}
+
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15824863793330" configfile="/atividade/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="1330" id="pf15824865144291" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15824865144292 pf15824865144293 pf15824865144294 pf15824865144295 pf15824865144296 pf15824865144297 pf15824865144298 pf158248654864217" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/principalMenu.xhtml" x="338" y="178" id="pf158248651442910" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15824865144292" path="/pages/principalMenu.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/clinicaPesquisa.xhtml" x="338" y="562" id="pf158248651442911" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15824865144293" path="/pages/clinicaPesquisa.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/leitoInternacaoPesquisa.xhtml" x="338" y="946" id="pf158248651442912" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf15824865144294" path="/pages/leitoInternacaoPesquisa.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/leitoPesquisa.xhtml" x="338" y="1330" id="pf158248651442913" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf15824865144295" path="/pages/leitoPesquisa.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/pacientePesquisa.xhtml" x="338" y="1714" id="pf158248651442914" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf15824865144296" path="/pages/pacientePesquisa.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/relatorio.xhtml" x="338" y="2098" id="pf158248651442915" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf15824865144297" path="/pages/relatorio.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/sobre.xhtml" x="338" y="2482" id="pf158248651442916" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15824865144298" path="/pages/sobre.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/paginaPrincipal.xhtml" id="pf158248654864218" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf158248654864217" path="/pages/paginaPrincipal.xhtml"/>
+  <links id="pf15824865144292" target="pf158248651442910" source="pf15824865144291" outcome="principalMenu" redirect="true"/>
+  <links id="pf15824865144293" target="pf158248651442911" source="pf15824865144291" outcome="clinicaPesquisa" redirect="true"/>
+  <links id="pf15824865144294" target="pf158248651442912" source="pf15824865144291" outcome="leitoInternacaoPesquisa" redirect="true"/>
+  <links id="pf15824865144295" target="pf158248651442913" source="pf15824865144291" outcome="leitoPesquisa" redirect="true"/>
+  <links id="pf15824865144296" target="pf158248651442914" source="pf15824865144291" outcome="pacientePesquisa" redirect="true"/>
+  <links id="pf15824865144297" target="pf158248651442915" source="pf15824865144291" outcome="relatorio" redirect="true"/>
+  <links id="pf15824865144298" target="pf158248651442916" source="pf15824865144291" outcome="sobre" redirect="true"/>
+  <links id="pf158248654864217" target="pf158248654864218" source="pf15824865144291" outcome="paginaPrincipal" redirect="true"/>
+</pageflow:Pageflow>

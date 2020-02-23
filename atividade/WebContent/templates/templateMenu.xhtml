@@ -29,6 +29,16 @@
 		<div id="conteudoPagina">
 			<h:form id="formPaginaPrincipal">
 				<rich:toolBar height="30px">
+
+					<rich:dropDownMenu>
+						<f:facet name="label">
+							<h:panelGroup>
+								<h:outputText value="Home" />
+							</h:panelGroup>
+						</f:facet>
+						<rich:menuItem value="Principal" action="#{menuBean.paginaPrincipal()}"></rich:menuItem>
+					</rich:dropDownMenu>
+
 					<rich:dropDownMenu>
 						<f:facet name="label">
 							<h:panelGroup>

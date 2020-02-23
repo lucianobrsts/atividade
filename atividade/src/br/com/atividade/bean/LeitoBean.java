@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.faces.model.SelectItem;
 
+import br.com.atividade.dao.LeitoDAO;
+import br.com.atividade.dao.LeitoDAOImpl;
 import br.com.atividade.domain.Leito;
 import br.com.atividade.util.FacesUtil;
 

@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.faces.model.SelectItem;
 
+import br.com.atividade.dao.LeitoInternacaoDAO;
+import br.com.atividade.dao.LeitoInternacaoDAOImpl;
 import br.com.atividade.domain.LeitoInternacao;
 import br.com.atividade.util.FacesUtil;
 
@@ -43,7 +45,7 @@ public class LeitoInternacaoBean {
 
 	public void carregarPesquisa() {
 		try {
-			LeitoInternacaoDAO leitoDAO = new LeitoInternacaoDAOImpl();
+			LeitoInternacaoDAO leitoInternacaoDAO = new LeitoInternacaoDAOImpl();
 			listaLeitoInternacoes = leitoInternacaoDAO.listar(LeitoInternacao.class);
 		} catch (Exception e) {
 			FacesUtil.adiconarMensagemErro("Erro ao tentar listar os leitos Internações.");

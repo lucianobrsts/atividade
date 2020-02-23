@@ -3,6 +3,7 @@ package br.com.atividade.bean;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.ManagedBean;
 import javax.faces.model.SelectItem;
 
 import br.com.atividade.dao.ClinicaDAO;
@@ -10,6 +11,7 @@ import br.com.atividade.dao.ClinicaDAOImpl;
 import br.com.atividade.domain.Clinica;
 import br.com.atividade.util.FacesUtil;
 
+@ManagedBean
 public class ClinicaBean {
 
 	private Clinica clinicaCadastro;
@@ -25,7 +27,7 @@ public class ClinicaBean {
 		selectItemsclinicas.add(new SelectItem(3, "UNIMED"));
 		selectItemsclinicas.add(new SelectItem(4, "HORTOCLÍNICA"));
 		selectItemsclinicas.add(new SelectItem(5, "PRONTOCÁRDIO"));
-		
+
 		return selectItemsclinicas;
 	}
 

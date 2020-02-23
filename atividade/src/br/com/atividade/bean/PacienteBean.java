@@ -2,11 +2,14 @@ package br.com.atividade.bean;
 
 import java.util.List;
 
+import javax.annotation.ManagedBean;
+
 import br.com.atividade.dao.PacienteDAO;
 import br.com.atividade.dao.PacienteDAOImpl;
 import br.com.atividade.domain.Paciente;
 import br.com.atividade.util.FacesUtil;
 
+@ManagedBean
 public class PacienteBean {
 
 	private Paciente pacienteCadastro;

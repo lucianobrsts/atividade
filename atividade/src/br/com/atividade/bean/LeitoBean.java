@@ -2,18 +2,19 @@ package br.com.atividade.bean;
 
 import java.util.List;
 
-import javax.faces.model.SelectItem;
+import javax.annotation.ManagedBean;
 
 import br.com.atividade.dao.LeitoDAO;
 import br.com.atividade.dao.LeitoDAOImpl;
 import br.com.atividade.domain.Leito;
 import br.com.atividade.util.FacesUtil;
 
+@ManagedBean
 public class LeitoBean {
+
 	private Leito leitoCadastro;
 	private List<Leito> listaLeitos;
 	private List<Leito> listaLeitosFiltrados;
-	private List<SelectItem> selectItemsLeitos;
 
 	public LeitoBean() {
 		carregarPesquisa();
@@ -72,14 +73,6 @@ public class LeitoBean {
 
 	public void setListaLeitosFiltrados(List<Leito> listaLeitosFiltrados) {
 		this.listaLeitosFiltrados = listaLeitosFiltrados;
-	}
-
-	public List<SelectItem> getSelectItemsLeitos() {
-		return selectItemsLeitos;
-	}
-
-	public void setSelectItemsLeitos(List<SelectItem> selectItemsLeitos) {
-		this.selectItemsLeitos = selectItemsLeitos;
 	}
 
 	public void setLeitoCadastro(Leito leitoCadastro) {

@@ -2,19 +2,18 @@ package br.com.atividade.bean;
 
 import java.util.List;
 
-import javax.faces.model.SelectItem;
+import javax.annotation.ManagedBean;
 
 import br.com.atividade.dao.LeitoInternacaoDAO;
 import br.com.atividade.dao.LeitoInternacaoDAOImpl;
 import br.com.atividade.domain.LeitoInternacao;
 import br.com.atividade.util.FacesUtil;
 
+@ManagedBean
 public class LeitoInternacaoBean {
-
 	private LeitoInternacao leitoInternacaoCadastro;
 	private List<LeitoInternacao> listaLeitoInternacoes;
 	private List<LeitoInternacao> listaLeitoInternacoesFiltrados;
-	private List<SelectItem> selectItemsLeitoInternacao;
 
 	public LeitoInternacaoBean() {
 		carregarPesquisa();
@@ -29,9 +28,9 @@ public class LeitoInternacaoBean {
 			LeitoInternacaoDAO leitoInternacaoDAO = new LeitoInternacaoDAOImpl();
 			leitoInternacaoDAO.salvar(leitoInternacaoCadastro);
 
-			FacesUtil.adicionarMensagemInfo("Leito Internação salvo com sucesso.");
+			FacesUtil.adicionarMensagemInfo("Leito Internaï¿½ï¿½o salvo com sucesso.");
 		} catch (Exception e) {
-			FacesUtil.adiconarMensagemErro("Erro ao tentar salvar um Leito Internação.");
+			FacesUtil.adiconarMensagemErro("Erro ao tentar salvar um Leito Internaï¿½ï¿½o.");
 		}
 	}
 
@@ -47,9 +46,8 @@ public class LeitoInternacaoBean {
 		try {
 			LeitoInternacaoDAO leitoInternacaoDAO = new LeitoInternacaoDAOImpl();
 			listaLeitoInternacoes = leitoInternacaoDAO.listar(LeitoInternacao.class);
-			System.out.println(listaLeitoInternacoes.toString());
 		} catch (Exception e) {
-			FacesUtil.adiconarMensagemErro("Erro ao tentar listar os leitos Internações.");
+			FacesUtil.adiconarMensagemErro("Erro ao tentar listar os leitos Internaï¿½ï¿½es.");
 		}
 	}
 
@@ -82,14 +80,6 @@ public class LeitoInternacaoBean {
 
 	public void setListaLeitoInternacoesFiltrados(List<LeitoInternacao> listaLeitoInternacoesFiltrados) {
 		this.listaLeitoInternacoesFiltrados = listaLeitoInternacoesFiltrados;
-	}
-
-	public List<SelectItem> getSelectItemsLeitoInternacao() {
-		return selectItemsLeitoInternacao;
-	}
-
-	public void setSelectItemsLeitoInternacao(List<SelectItem> selectItemsLeitoInternacao) {
-		this.selectItemsLeitoInternacao = selectItemsLeitoInternacao;
 	}
 
 }

@@ -22,8 +22,42 @@
 
 			<rich:panel header="Leitos">
 
-				<rich:dataTable 
-					var="paciente" id="tabelaLeitoListagem" rows="10">
+				<rich:dataTable value="#{leitoBean.listaLeitos}" var="leito"
+					id="tabelaLeitoListagem" rows="10">
+					<rich:column width="70" style="text-align: center;">
+						<f:facet name="header">
+							<h:outputText value="Id " />
+						</f:facet>
+						<h:outputText value="#{leito.id}" />
+					</rich:column>
+					
+					<rich:column filterBy="#{leito.descricao}" width="250">
+						<f:facet name="header">
+							<h:outputText value="Descrição" />
+						</f:facet>
+						<h:outputText value="#{leito.descricao}" />
+					</rich:column>
+					
+					<rich:column width="100" style="text-align: center;">
+						<f:facet name="header">
+							<h:outputText value="Leito" />
+						</f:facet>
+						<h:outputText value="#{leito.clinica.descricao}" />
+					</rich:column>
+					
+					<rich:column width="150" style="text-align: center;">
+						<f:facet name="header">
+							<h:outputText value="Opções" />
+						</f:facet>
+						<a4j:commandButton value="Editar"
+							onclick="Richfaces.showModalPanel('modalEditar')"
+							ajaxSingle="true">
+						</a4j:commandButton>
+						<a4j:commandButton value="Excluir"
+							onclick="Richfaces.showModalPanel('modalExcluir')"
+							ajaxSingle="true">
+						</a4j:commandButton>
+					</rich:column>
 
 					<f:facet name="footer">
 						<rich:datascroller />
@@ -70,7 +104,7 @@
 
 		<!-- Modal Excluir -->
 		<h:form id="formLeitoExcluir">
-		
+
 		</h:form>
 	</ui:define>
 </ui:composition>

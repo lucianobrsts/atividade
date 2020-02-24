@@ -175,7 +175,9 @@
 
 				<h:panelGrid columns="2">
 					<h:commandButton value="Excluir"
-						actionListener="#{pacienteBean.salvar()}" />
+						action="#{pacienteBean.excluir()}">
+						<f:setPropertyActionListener />
+						</h:commandButton>
 
 					<a4j:commandButton value="Cancelar"
 						onclick="Richfaces.hideModalPanel('modalExcluir')"

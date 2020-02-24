@@ -60,6 +60,17 @@ public class PacienteBean {
 		return pacienteCadastro;
 	}
 
+	public void excluir() {
+		try {
+			PacienteDAO pacienteDAO = new PacienteDAOImpl();
+			pacienteDAO.excluir(pacienteCadastro);
+
+			FacesUtil.adicionarMensagemInfo("Paciente excluído com sucesso.");
+		} catch (Exception e) {
+			FacesUtil.adiconarMensagemErro("Erro ao tentar excluir um paciente." + e.getMessage());
+		}
+	}
+
 	public void setPacienteCadastro(Paciente pacienteCadastro) {
 		this.pacienteCadastro = pacienteCadastro;
 	}

@@ -122,12 +122,12 @@
 		</rich:modalPanel>
 
 		<!-- Modal Editar -->
-		<h:form id="formPacienteEditar">
 			<rich:modalPanel id="modalEditar" width="400" height="150">
 				<f:facet name="header">
 					<h:outputText value="Paciente Editar" />
 				</f:facet>
 
+			<h:form id="formPacienteEditar">
 				<h:panelGrid columns="2" id="panelPacienteEditar">
 					<h:outputLabel value="Id:" />
 					<h:inputText value="#{pacienteBean.pacienteCadastro.id}"
@@ -153,8 +153,8 @@
 						ajaxSingle="true">
 					</a4j:commandButton>
 				</h:panelGrid>
-			</rich:modalPanel>
-		</h:form>
+			</h:form>
+		</rich:modalPanel>
 
 		<!-- Modal Excluir -->
 		<h:form id="formPacienteExcluir">

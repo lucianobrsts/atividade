@@ -71,6 +71,20 @@ public class PacienteBean {
 		}
 	}
 
+	public void editar() {
+		try {
+			PacienteDAO pacienteDAO = new PacienteDAOImpl();
+			pacienteDAO.editar(pacienteCadastro);
+
+			listaPacientes = pacienteDAO.listar(Paciente.class);
+			FacesUtil.adicionarMensagemInfo("Paciente Editado com sucesso.");
+		} catch (Exception e) {
+			e.printStackTrace();
+
+			FacesUtil.adiconarMensagemErro(e.getMessage());
+		}
+	}
+
 	public void setPacienteCadastro(Paciente pacienteCadastro) {
 		this.pacienteCadastro = pacienteCadastro;
 	}
